@@ -1,26 +1,31 @@
+function calculate() {
+    let a = document.getElementById('firstNum').value;
+    let b = document.getElementById('operation').value;
+    let c = document.getElementById('secondNum').value;
+    let resultDiv = document.getElementById('result');
 
-let random = Math.random()
-console.log (random)
+    if (a === '' || c === '') {
+        resultDiv.textContent = 'Please enter both numbers.';
+        return;
+    }
 
-let a = prompt("Enter First Number")
-let b = prompt("Enter Operation")
-let c = prompt("Enter Secound Number")
+    let random = Math.random();
+    let obj = {
+        "+": "-",
+        "*": "+",
+        "-": "/",
+        "/": "*",
+    };
 
-let obj ={
-      
-       "+": "-",
-       "*": "+",
-       "-": "/",
-       "/": "*",
+    let result;
+    if (random > 0.1) {
+        result = eval(`${a} ${b} ${c}`);
+    } else {
+        let faultyOp = obj[b] || b;
+        result = eval(`${a} ${faultyOp} ${c}`);
+    }
+    resultDiv.textContent = `The result is ${result}`;
 }
 
-if (random > 0.1 ) {
+document.getElementById('calculateBtn').addEventListener('click', calculate);
 
-    alert(`The result is ${eval(`${a} ${b} ${c}`)}`)
-
-    
-} else {
-
-    c = obj [c]
-    alert(`The result is ${eval(`${a} ${b} ${c}`)}`)
-}

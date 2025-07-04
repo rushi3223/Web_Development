@@ -70,14 +70,28 @@ let obj = {
    d: "rushi" 
 }
  
-    if (typof obj [key]==="stirng"){
-{
-    console.log(`${key}:"${obj[key]}"is a string`);
+console.log(obj)
+console.log(obj.a)
+console.log(obj["b"])
+console.log(obj.c)
+console.log(obj.d)
+console.log(obj["d"] = "Keesa") // updating value of d
+console.log(obj)
 
-}
-else {
-         (typof obj [key]==="number"){
-            console.log(`${key}:"${obj[key]}"is a number`)
-         }
-}
-    }
+console.log(typeof ("2" + 2)) // string concatenation         22
+console.log(typeof("2" - 2)) // string to number conversion    0
+console.log(typeof("2" * 2)) // string to number conversion    4
+
+let str = "123";
+let num = Number(str);   // converting string to number   -- Also use ParseInt(str) or parseFloat(str)
+console.log(num, typeof (num) ); // number
+
+// let num2= Number(prompt("Enter a number"));
+// console.log(num2, typeof (num2)); // number
+
+//NAN - NOT A NUMBER
+let nanValue = Number("abc"); // trying to convert a non-numeric string to number
+console.log(nanValue, typeof (nanValue)); // NaN
+
+
+
